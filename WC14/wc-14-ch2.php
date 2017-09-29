@@ -22,7 +22,7 @@ all of the unique color options in the database. -->
           $chosenColor = $_GET['colors'];
         try
         {
-          $db = new PDO("mysql:dbname=weeklyChallenges;host=localhost", "root", "root");
+          $db = new PDO('mysql:host=localhost;dbname=tmcgee_weekly', 'r2hstudent', 'SbFaGzNgGIE8kfP');
           $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           $items = "SELECT product_name, product_color FROM Products WHERE product_color = :product_color";
           $chosenItem = $db->prepare($items);
