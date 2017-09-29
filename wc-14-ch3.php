@@ -9,11 +9,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 </head>
 <body>
-  <form method="POST" action="wc-14-ch3.php">
-      <input type="text" placeholder="Name" name="name" />
-      <input type="text" placeholder="Price" name="price"/>
-      <input type="text" placeholder="Description" name="description" />
-      <input type="text" placeholder="color" name="color" />
+  <form method="POST" action="wc-14-ch3.php" id="form">
+      <input type="text" placeholder="Name" name="name" required/>
+      <input type="text" placeholder="Price" name="price" required/>
+      <input type="text" placeholder="Description" name="description" required/>
+      <input type="text" placeholder="color" name="color" required/>
       <input type="submit" value="Submit" />
     </form>
     <div>
@@ -21,7 +21,7 @@
         if(!empty($_POST)) {
         try
         {
-          $db = new PDO("mysql:dbname=weeklyChallenges;host=localhost", "root", "root");
+          $db = new PDO('mysql:host=localhost;dbname=tmcgee_weekly', 'r2hstudent', 'SbFaGzNgGIE8kfP');
           $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           $items = 'INSERT INTO  Products(product_name, product_color, product_price, product_descr)
           VALUES(:name, :price, :description, :color)';
@@ -39,5 +39,5 @@
       ?>
     </div>
 </body>
-<script src="lib/js/javascript.js" ></script>
+<script src="lib/js/javascript.js"></script>
 </html>
