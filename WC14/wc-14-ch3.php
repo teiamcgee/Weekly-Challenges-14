@@ -21,7 +21,7 @@
         if(!empty($_POST)) {
         try
         {
-          $db = new PDO("mysql:dbname=weeklyChallenges;host=localhost", "root", "root");
+          $db = new PDO('mysql:host=localhost;dbname=tmcgee_weekly', 'r2hstudent', 'SbFaGzNgGIE8kfP');
           $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           $items = 'INSERT INTO  Products(product_name, product_color, product_price, product_descr)
           VALUES(:name, :price, :description, :color)';
