@@ -12,7 +12,7 @@ all of the US states. Generate the states using PHP/MySQL. -->
     <?php
     try
     {
-    $db = new PDO("mysql:dbname=weeklyChallenges;host=localhost", "root", "root");
+    $db = new PDO('mysql:host=localhost;dbname=tmcgee_weekly', 'r2hstudent', 'SbFaGzNgGIE8kfP');
     $states = "SELECT state_name FROM 	States";
     foreach($db->query($states) as $state){
       echo "<option value=\"{$state['state_name']}\">" . $state['state_name'] . "</option> ";
